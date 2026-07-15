@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Thank You Screen</title>
+        <link rel="stylesheet" href="thankyou.css">
+    </head>
+    <body>
+        <div class="thankyou-container">
+            <h1> Thank You!</h1>
+            <p>We appreciate your feedback and hope you enjoyed the movie.</p>
+            <div class="review-section">
+                <h2>Movie Review</h2>
+                <input type="text" placeholder="Enter movie name" id="name">
+                <br>
+                <textarea id="movie-review" rows="5" cols="50" placeholder="Write your review here..."></textarea>
+                <br>
+                <button id="submit-review" onclick="submit_review()">Submit Review</button>
+            </div>
+        </div>
+
+        <script>
+            function submit_review() {
+                name = document.getElementById("name").innerText;
+                review = document.getElementById("movie-review").innerText;
+                localStorage.setItem(name,review);
+                window.location.href = "index.html"
+            }
+        </script>
+    </body>
+</html>
